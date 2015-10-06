@@ -1,0 +1,7 @@
+  <%= form_for @hive do |f| %>
+        <%= f.text_area :name, placeholder: "Name" %>
+        <%= f.text_area :location, placeholder: "Location" %>
+        <%= f.text_area :established, placeholder: "Date Established" %>
+        <%= f.text_area :health, placeholder: "Health" %>
+        <%= f.submit class: "button small" %>
+        <% end %>
