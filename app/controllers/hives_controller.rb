@@ -20,6 +20,21 @@ class HivesController < ApplicationController
     end
   end
 
+  def show
+    @hive = Hive.find(params[:id])
+  end
+
+  def update
+    @hive
+    @hive.update(name: hive_params[:name], location: hive_params[:location])
+    if @hive.save
+      redirect_to hive_path
+    else
+      flash[:errors] = @hive.errors.full_messages.join(". ")
+      render :show
+    end
+  end
+
   private
 
   def hive_params

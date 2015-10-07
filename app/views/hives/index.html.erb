@@ -1,7 +1,24 @@
-  <% @hives.each do |h| %>
-    Name: <%= h.name %><br>
-    Location: <%= h.location %><br>
-    Date established: <%= h.established %><br>
-    Health: <%= h.health %><br>
-    <br>
-  <% end %>
+
+    <div class="row">
+      <% @hives.each do |h| %>
+      <div class="medium-4 columns">
+        <div class="profile-card">
+          <%= link_to image_tag("hive.png"), hive_path(h) %>
+          <div class="profile-info">
+            <h4 class="subheader"><%= h.name %></h4>
+            <p><strong>Location</strong><br> <%= h.location %></p>
+            <p><strong>Established</strong><br> <%= h.established %></p>
+            <p><strong>Health</strong><br> <%= h.health %></p>
+                      <% if current_user %>
+                            <%= link_to "Edit Hive",
+                            hive_path(h),
+                            method: :get,
+                            class: "button tiny" %>
+                          <% end %>
+
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
