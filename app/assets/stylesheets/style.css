@@ -7,14 +7,18 @@
   padding: 1rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   margin: 2rem 0;
-  background-color: #fff; }
+  background-color: #fff;
+  text-align: center; }
+
 .profile-card img {
   width: 8rem;
   display: block;
   margin: 1rem auto;
   text-align: center; }
+
 .profile-card .profile-info {
   padding: 1rem; }
+
 .profile-card .profile-info h4 {
   margin-top: 0;
   font-size: 1.5rem;
@@ -23,7 +27,6 @@
 .profile-card .profile-info p {
   text-align: center; }
 .profile-card .profile-info .inline-list {
-    text-align: center;
   margin-bottom: 1rem; }
 .profile-card .profile-info .inline-list li {
   float: none;
