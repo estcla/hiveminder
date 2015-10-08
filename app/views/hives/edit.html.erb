@@ -1,0 +1,19 @@
+  <div class="row">
+    <div class="medium-3 columns">
+      <div class="profile-card">
+        <%= link_to image_tag("hive.png") %>
+        <div class="profile-info">
+          <h4 class="subheader"><%= @hive.name %></h4>
+          <p><strong>Location</strong><br> <%= @hive.location %></p>
+          <p><strong>Established</strong><br> <%= @hive.established %></p>
+          <p><strong>Health</strong><br><%= @hive.health %></p>
+        </div>
+      </div>
+    </div>
+      <div class="medium-9 columns">
+        <div class="profile-card">
+          <h4 class="subheader">Update Hive</h4>
+          <%= render partial: 'hives/hiveform' %>
+      </div>
+  </div>
+</div>

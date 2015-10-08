@@ -23,7 +23,7 @@ feature 'user adds a hive', %{
     fill_in "hive[established]", with: "Spring 2015"
     fill_in "hive[health]", with: "Fair"
 
-    click_button 'Create Hive'
+    click_button 'Submit'
 
     expect(page).to have_content "Hive added!"
   end
@@ -44,7 +44,7 @@ feature 'user adds a hive', %{
     fill_in "hive[established]", with: "Spring 2015"
     fill_in "hive[health]", with: "Fair"
 
-    click_button 'Create Hive'
+    click_button 'Submit'
 
     expect(page).to have_content "Name can't be blank"
   end
