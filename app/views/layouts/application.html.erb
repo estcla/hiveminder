@@ -18,7 +18,9 @@
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to "View Hives", hives_path %></li>
-          <li><%= link_to "Create New Hive", new_hive_path %></li>
+          <li><%= link_to "View Inspections", inspections_path %></li>
+          <li><%= link_to "Add Hive", new_hive_path %></li>
+          <li><%= link_to "Add Inspection", new_inspection_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
