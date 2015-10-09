@@ -1,5 +1,7 @@
 <% @inspections.each do |i| %>
   <h3>Inspection #<%= i.id %></h3>
   Date: <%= i.date %><br>
+  Associated Hive: <%= i.hive_id %><br>
   <p>Time of Day: <%= i.time_of_day %></p>
+
 <% end %>
