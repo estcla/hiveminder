@@ -8,17 +8,16 @@ class InspectionsController < ApplicationController
   end
 
   def create
-  @inspection = Inspection.new(inspection_params)
-  @inspection.user = current_user
+    @inspection = Inspection.new(inspection_params)
+    @inspection.user = current_user
 
-  if @inspection.save
-    flash[:notice] = 'Inspection added!'
-    redirect_to inspections_path
-  else
-    flash[:errors] = @inspection.errors.full_messages.join(". ")
-    redirect_to new_inspection_path
-  end
-
+    if @inspection.save
+      flash[:notice] = 'Inspection added!'
+      redirect_to inspections_path
+    else
+      flash[:errors] = @inspection.errors.full_messages.join(". ")
+      redirect_to new_inspection_path
+    end
   end
 
   def show
