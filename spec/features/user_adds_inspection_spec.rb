@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user adds an inspection', %{
+feature 'user adds a general inspection', %{
   As a beekeeper interested in logging hive inspections
   I would like to create a posting for every inspection I make
-  So I can carefully monitor the progress of my hives
+  So I can carefully monitor my inspections
 } do
 
   scenario 'user successfully add a general inspection' do
