@@ -15,6 +15,11 @@
             <% end %>
           <% if current_user %>
             <%= link_to "Edit Hive", edit_hive_path(h), class: "button tiny" %>
+            <%= button_to "Delete",
+                hive_path(h),
+                data: { confirm: "Really?" },
+                method: :delete,
+                class: "button tiny" %>
           <% end %>
         </div>
       </div>
