@@ -1,5 +1,7 @@
 <%= form_for @inspection do |f| %>
   <%= f.text_area :date, placeholder: "Date" %>
   <%= f.text_area :time_of_day, placeholder: "Time of Day" %>
+  <%= f.label :hive %>
+  <%= f.collection_select(:hive_id, Hive.all, :id, :name, prompt: "Select Hive")%>
   <%= f.submit "Submit", class: "button small" %>
 <% end %>

@@ -8,6 +8,11 @@
           <p><strong>Location</strong><br> <%= h.location %></p>
           <p><strong>Established</strong><br> <%= h.established %></p>
           <p><strong>Health</strong><br> <%= h.health %></p>
+            <% @inspections.each do |i| %>
+              <% if i.hive_id == h.id %>
+                 Last inspection: <%= i.date %><br><br>
+              <% end %>
+            <% end %>
           <% if current_user %>
             <%= link_to "Edit Hive", edit_hive_path(h), class: "button tiny" %>
           <% end %>
@@ -16,4 +21,3 @@
     </div>
   <% end %>
 </div>
-<div id="example3"></div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008171704) do
+ActiveRecord::Schema.define(version: 20151009164035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,21 @@ ActiveRecord::Schema.define(version: 20151008171704) do
     t.datetime "updated_at"
   end
 
+  create_table "hives_inspections", id: false, force: :cascade do |t|
+    t.integer "hive_id"
+    t.integer "inspection_id"
+  end
+
   create_table "inspections", force: :cascade do |t|
     t.string   "date",        null: false
     t.string   "time_of_day", null: false
     t.integer  "user_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "hive_id"
   end
+
+  add_index "inspections", ["hive_id"], name: "index_inspections_on_hive_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -52,4 +60,5 @@ ActiveRecord::Schema.define(version: 20151008171704) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "inspections", "hives"
 end
