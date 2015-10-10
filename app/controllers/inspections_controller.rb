@@ -1,7 +1,6 @@
 class InspectionsController < ApplicationController
   def index
     @inspections = Inspection.all
-    @hives = Hive.all
   end
 
   def new
