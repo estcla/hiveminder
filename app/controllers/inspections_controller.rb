@@ -5,11 +5,13 @@ class InspectionsController < ApplicationController
 
   def new
     @inspection = Inspection.new
+    @hives = Hive.all
   end
 
   def create
     @inspection = Inspection.new(inspection_params)
     @inspection.user = current_user
+    @hives = Hive.all
 
     if @inspection.save
       flash[:notice] = 'Inspection added!'
@@ -27,7 +29,7 @@ class InspectionsController < ApplicationController
 private
 
   def inspection_params
-    params.require(:inspection).permit(:date, :time_of_day, :user_id)
+    params.require(:inspection).permit(:date, :time_of_day, :user_id, :hive_id)
   end
 
 end

@@ -1,6 +1,7 @@
 class HivesController < ApplicationController
   def index
     @hives = Hive.all
+    @inspections = Inspection.all
   end
 
   def new
@@ -37,6 +38,13 @@ class HivesController < ApplicationController
       flash[:errors] = @hive.errors.full_messages.join(". ")
       render :edit
     end
+  end
+
+  def destroy
+    @hive = Hive.find(params[:id])
+    @hive.destroy
+    flash[:success] = 'Hive deleted.'
+    redirect_to hives_path
   end
 
   private

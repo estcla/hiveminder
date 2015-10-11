@@ -1,5 +1,13 @@
 <% @inspections.each do |i| %>
+
   <h3>Inspection #<%= i.id %></h3>
   Date: <%= i.date %><br>
+     <% if i.hive_id.nil? %>
+     <%= "Nothing" %>
+     <% else %>
+        <%= "#{Hive.find(i.hive_id).name}" %>
+                <% end %>
   <p>Time of Day: <%= i.time_of_day %></p>
+
+
 <% end %>
