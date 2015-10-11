@@ -7,4 +7,12 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :hive do
+    name "Hivey Hive"
+    location "Backyard"
+    established "Two seconds ago"
+    health "Good"
+    user_id 1
+  end
+
 end

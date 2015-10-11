@@ -40,6 +40,13 @@ class HivesController < ApplicationController
     end
   end
 
+  def destroy
+    @hive = Hive.find(params[:id])
+    @hive.destroy
+    flash[:success] = 'Hive deleted.'
+    redirect_to hives_path
+  end
+
   private
 
   def hive_params
