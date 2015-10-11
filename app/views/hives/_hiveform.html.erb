@@ -1,7 +1,8 @@
-  <%= form_for @hive do |f| %>
-    <%= f.text_area :name, placeholder: "Name" %>
-    <%= f.text_area :location, placeholder: "Location" %>
-    <%= f.text_area :established, placeholder: "Date Established" %>
-    <%= f.text_area :health, placeholder: "Health" %>
+  <%= simple_form_for @hive do |f| %>
+    <%= f.input :name, placeholder: "Name" %>
+    <%= f.input :location, placeholder: "Location" %>
+    <%= f.input :established, placeholder: "Date Established" %>
+    <%= f.input :health, placeholder: "Health" %>
+    <%= f.input :tag_list %>
     <%= f.submit "Submit", class: "button small" %>
   <% end %>

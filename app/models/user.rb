@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
   has_many :inspections
   has_many :hives
+  acts_as_tagger
 end

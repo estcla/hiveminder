@@ -6,17 +6,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">Hiveminder</a></h1>
       </li>
     </ul>
-
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
+          <li><%= link_to "View Tags", tags_path %></li>
           <li><%= link_to "View Hives", hives_path %></li>
           <li><%= link_to "View Inspections", inspections_path %></li>
           <li><%= link_to "Add Hive", new_hive_path %></li>
@@ -29,6 +28,7 @@
       </ul>
     </section>
   </nav>
+
 <div class="row">
     <div class="small-9 small-centered columns">
   <%- flash.each do |key, value| -%>
@@ -42,5 +42,6 @@
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 </div></div>
+</div>
 </body>
 </html>
