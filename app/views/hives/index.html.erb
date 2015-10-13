@@ -8,6 +8,7 @@
           <p><strong>Location</strong><br> <%= h.location %></p>
           <p><strong>Established</strong><br> <%= h.established %></p>
           <p><strong>Health</strong><br> <%= h.health %></p>
+          <%= render h.tags %><br>
             <% @inspections.each do |i| %>
               <% if i.hive_id == h.id %>
                  Last inspection: <%= i.date %><br><br>

@@ -31,7 +31,9 @@ class HivesController < ApplicationController
 
   def update
     @hive = Hive.find(params[:id])
-    @hive.update(name: hive_params[:name], location: hive_params[:location], established: hive_params[:established], health: hive_params[:health] )
+    @hive.update(name: hive_params[:name], location: hive_params[:location],
+                 established: hive_params[:established], health: hive_params[:health],
+                 tag_list: hive_params[:tag_list] )
     if @hive.save
       redirect_to hives_path
     else
@@ -50,6 +52,6 @@ class HivesController < ApplicationController
   private
 
   def hive_params
-    params.require(:hive).permit(:name, :established, :location, :health, :user_id)
+    params.require(:hive).permit(:name, :established, :location, :health, :tag_list, :user_id)
   end
 end

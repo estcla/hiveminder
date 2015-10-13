@@ -1,6 +1,8 @@
 class Hive < ActiveRecord::Base
+  acts_as_taggable
+
   belongs_to :user
-  has_many :inspections
+  has_many :inspections, dependent: :destroy
 
   validates :name, presence: true
   validates :location, presence: true

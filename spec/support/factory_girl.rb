@@ -14,5 +14,4 @@ FactoryGirl.define do
     health "Good"
     user_id 1
   end
-
 end
