@@ -29,7 +29,7 @@ class InspectionsController < ApplicationController
 private
 
   def inspection_params
-    params.require(:inspection).permit(:date, :time_of_day, :user_id, :hive_id)
+    params.require(:inspection).permit(:date, :time_of_day, :user_id, :hive_id, :tag_list)
   end
 
 end
