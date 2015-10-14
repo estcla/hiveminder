@@ -1,15 +1,115 @@
+.row {
+  max-width: 100%; }
 
-.top-bar {
-  margin-bottom: 25px;
-	text-shadow: 0 0 10px #20656b;
+.menu {
+  background-color: rgb(140,198,174);
+  text-shadow: 0 0 10px rgb(93, 140, 121);
+  padding: 1.5rem 2.5rem;
+  height: auto;
+  margin-bottom: 2rem;
+   }
+
+.menu .inline-list {
+  text-align: center; }
+
+.menu .inline-list li {
+  float: none;
+  display: inline-block; }
+
+.menu .inline-list a {
+  color: #fff;
+  padding-bottom: 0.25rem; }
+
+.menu .inline-list a:hover {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(93, 140, 121, 0.5);
+  transition: all .3s ease-in-out; }
+
+.menu .inline-list .active a {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(93, 140, 121, 0.5); }
+
+@media only screen and (min-width: 60em) {
+  .menu {
+    height: 4.5rem; }
+
+  .menu .inline-list {
+    float: right; }
+}
+
+.name {
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 1;
+  margin: 0 0 .75rem 0;
+  color: #fff;
+ }
+
+.name i {
+  color:  rgb(211, 230, 222);
+  margin-right: 0.5rem;
+   }
+
+@media only screen and (min-width: 60em) {
+  .name {
+    float: left; }
+}
+
+.simple_form {
+  padding-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.simple_form input {
+  font-size: 1.25rem;
+  color: #707070;
+  border-style: none;
+}
+
+.button.small {
+  color: #fff;
+  border-style: none;
+  font-size: 1rem;
+}
+
+.simple_form select {
+  font-size: 1.25rem;
+  border-style: none;
+  color: #C2C2C2;
+  height: auto;
+  background: #fff;
+}
+
+.flash {
+  text-align: center;
+}
+
+body {
+  background-color: white;
+  background: -moz-linear-gradient(top, rgba(215,198,174,0.25) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(215,198,174,0.25), color-stop(100%), rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: -ms-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .profile-card {
   padding: 1rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   margin: 2rem 0;
-  background-color: #fff;
-  text-align: center; }
+  text-align: center;
+  color: #6f6f6f;
+  background-color: white; }
+
+.profile-card a {
+  color: #7e7e7e;
+}
 
 .profile-card img {
   width: 8rem;
@@ -18,47 +118,20 @@
   text-align: center; }
 
 .profile-card .profile-info {
-  padding: 1rem; }
+  padding: .25rem; }
 
 .profile-card .profile-info h4 {
   margin-top: 0;
   font-size: 1.5rem;
   text-align: center;
-  text-transform: uppercase; }
+  color: #555555; }
+
 .profile-card .profile-info p {
   text-align: center; }
+
 .profile-card .profile-info .inline-list {
   margin-bottom: 1rem; }
+
 .profile-card .profile-info .inline-list li {
   float: none;
   display: inline-block; }
-.profile-card .profile-info .inline-list i.fi-social-facebook {
-  font-size: 1.5rem;
-  color: #3b5998; }
-.profile-card .profile-info .inline-list i.fi-social-facebook:hover {
-  transform: scale(1.5);
-  transition: all .5s ease-in-out; }
-.profile-card .profile-info .inline-list i.fi-social-twitter {
-  font-size: 1.5rem;
-  color: #55acee; }
-.profile-card .profile-info .inline-list i.fi-social-twitter:hover {
-transform: scale(1.5);
-transition: all .5s ease-in-out; }
-.profile-card .profile-info .inline-list i.fi-social-linkedin {
-font-size: 1.5rem;
-color: #0077b5; }
-.profile-card .profile-info .inline-list i.fi-social-linkedin:hover {
-transform: scale(1.5);
-transition: all .5s ease-in-out; }
-.profile-card .profile-info .inline-list i.fi-social-github {
-font-size: 1.5rem;
-color: #333; }
-.profile-card .profile-info .inline-list i.fi-social-github:hover {
-transform: scale(1.5);
-transition: all .5s ease-in-out; }
-.profile-card .profile-info .inline-list i.fi-social-youtube {
-font-size: 1.5rem;
-color: #cc181e; }
-.profile-card .profile-info .inline-list i.fi-social-youtube:hover {
-transform: scale(1.5);
-transition: all .5s ease-in-out; }

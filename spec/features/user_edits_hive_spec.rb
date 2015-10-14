@@ -25,7 +25,7 @@ feature 'user edits a hive', %{
 
     click_button 'Submit'
 
-    click_link 'Edit Hive'
+    click_link 'Edit'
 
     fill_in "hive[name]", with: "New Thing"
 

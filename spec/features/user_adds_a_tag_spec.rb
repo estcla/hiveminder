@@ -24,7 +24,7 @@ feature 'user adds a tag to inspection', %{
 
     click_button 'Submit'
 
-    expect(page).to have_content "Inspection added!"
+    expect(page).to have_content "Inspection added"
     expect(page).to have_content "healthy queen"
   end
 end

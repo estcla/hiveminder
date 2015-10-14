@@ -23,7 +23,7 @@ feature 'user adds a general inspection', %{
 
     click_button 'Submit'
 
-    expect(page).to have_content "Inspection added!"
+    expect(page).to have_content "Inspection added"
     expect(page).to have_content "Morning"
   end
 

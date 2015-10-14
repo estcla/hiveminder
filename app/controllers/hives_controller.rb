@@ -13,7 +13,7 @@ class HivesController < ApplicationController
     @hive.user = current_user
 
     if @hive.save
-      flash[:notice] = 'Hive added!'
+      flash[:notice] = 'Hive added'
       redirect_to hives_path
     else
       flash[:errors] = @hive.errors.full_messages.join(". ")
@@ -35,6 +35,7 @@ class HivesController < ApplicationController
                  established: hive_params[:established], health: hive_params[:health],
                  tag_list: hive_params[:tag_list] )
     if @hive.save
+      flash[:notice] = 'Hive updated'
       redirect_to hives_path
     else
       flash[:errors] = @hive.errors.full_messages.join(". ")
@@ -45,7 +46,7 @@ class HivesController < ApplicationController
   def destroy
     @hive = Hive.find(params[:id])
     @hive.destroy
-    flash[:success] = 'Hive deleted.'
+    flash[:success] = 'Hive deleted'
     redirect_to hives_path
   end
 

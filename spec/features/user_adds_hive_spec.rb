@@ -25,7 +25,7 @@ feature 'user adds a hive', %{
 
     click_button 'Submit'
 
-    expect(page).to have_content "Hive added!"
+    expect(page).to have_content "Hive added"
   end
 
   scenario 'user unsuccessfully adds a hive' do
