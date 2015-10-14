@@ -19,7 +19,7 @@ feature 'user deletes a hive', %{
 
     click_button "Delete"
 
-    expect(page).to have_content "Hive deleted."
+    expect(page).to have_content "Hive deleted"
   end
 
 end

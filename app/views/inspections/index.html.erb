@@ -11,11 +11,9 @@
               <% else %>
                 <%= "#{Hive.find(i.hive_id).name}" %>
               <% end %></p></p>
-          <p><strong>Tags</strong><br><% if i.hive_id.nil? %>
-                <%= "N/A" %>
-              <% else %>
-                <%= render i.tags %>
-              <% end %></p></p>
+          <p><strong>Tags</strong></p>
+              <p>  <%= render i.tags %>
+              </p>
 
           <% if current_user %>
             <%= button_to "Edit", edit_inspection_path(i), class: "button small" %>

@@ -35,6 +35,7 @@ class HivesController < ApplicationController
                  established: hive_params[:established], health: hive_params[:health],
                  tag_list: hive_params[:tag_list] )
     if @hive.save
+      flash[:notice] = 'Hive updated'
       redirect_to hives_path
     else
       flash[:errors] = @hive.errors.full_messages.join(". ")
