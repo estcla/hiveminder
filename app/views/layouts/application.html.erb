@@ -4,36 +4,34 @@
   <title>Hiveminder</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Hiveminder</a></h1>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to "View Tags", tags_path %></li>
-          <li><%= link_to "View Hives", hives_path %></li>
-          <li><%= link_to "View Inspections", inspections_path %></li>
-          <li><%= link_to "Add Hive", new_hive_path %></li>
-          <li><%= link_to "Add Inspection", new_inspection_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+<nav class="menu">
+  <h1 class="name"><i class="fi-clipboard-pencil"></i>hiveminder</a></h1>
+  <ul class="inline-list">
+  <%- if current_user -%>
+    <li><%= link_to "View Tags", tags_path %></li>
+    <li><%= link_to "View Hives", hives_path %></li>
+    <li><%= link_to "View Inspections", inspections_path %></li>
+    <li><%= link_to "Add Hive", new_hive_path %></li>
+    <li><%= link_to "Add Inspection", new_inspection_path %></li>
+    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+  <%- else -%>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+  <%- end -%>
+  </ul>
+</nav>
 
 <div class="row">
     <div class="small-9 small-centered columns">
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
+      <div data-alert class="alert-box">
       <%= value %>
+      </div>
     </div>
   <%- end -%>
 

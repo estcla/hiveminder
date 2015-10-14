@@ -1,13 +1,32 @@
-<% @inspections.each do |i| %>
+<div class="row">
+  <% @inspections.each do |i| %>
+    <div class="medium-4 columns">
+      <div class="profile-card">
+        <div class="profile-info">
+          <h4 class="subheader">Inspection № <%= i.id %></h4>
+          <p><strong>Date</strong><br> <%= i.date %></p>
+          <p><strong>Time of Day</strong><br> <%= i.time_of_day %></p>
+          <p><strong>Hive</strong><br><% if i.hive_id.nil? %>
+                <%= "N/A" %>
+              <% else %>
+                <%= "#{Hive.find(i.hive_id).name}" %>
+              <% end %></p></p>
+          <p><strong>Tags</strong><br><% if i.hive_id.nil? %>
+                <%= "N/A" %>
+              <% else %>
+                <%= render i.tags %>
+              <% end %></p></p>
 
-  <h3>Inspection #<%= i.id %></h3>
-  Date: <%= i.date %><br>
-  Time of Day: <%= i.time_of_day %><br>
-  Hive: <% if i.hive_id.nil? %>
-        <%= "Nothing" %>
-      <% else %>
-        <%= "#{Hive.find(i.hive_id).name}" %>
-      <% end %><br>
-  Tags: <%= render i.tags %>
-      <br><br>
-<% end %>
+          <% if current_user %>
+            <%= button_to "Edit", edit_inspection_path(i), class: "button small" %>
+            <%= button_to "Delete",
+                inspection_path(i),
+                data: { confirm: "Really?" },
+                method: :delete,
+                class: "button small" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

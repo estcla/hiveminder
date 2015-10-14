@@ -1,8 +1,12 @@
-<%= form_for @inspection do |f| %>
-  <%= f.text_area :date, placeholder: "Date" %>
-  <%= f.text_area :time_of_day, placeholder: "Time of Day" %>
-  <%= f.label :hive %>
-  <%= f.collection_select(:hive_id, Hive.all, :id, :name, prompt: "Select Hive")%>
-  <%= f.text_area :tag_list %>
+<div class="row">
+    <div class="small-9 small-centered columns">
+  <%= simple_form_for @inspection do |f| %>
+  <%= f.input :date, placeholder: "Date", label: false %>
+  <%= f.input :time_of_day, placeholder: "Time of Day", label: false %>
+  <%= f.collection_select(:hive_id, Hive.all, :id, :name, prompt: "Select Hive") %>
+  <%= f.input :tag_list, placeholder: "Tags", label: false %>
   <%= f.submit "Submit", class: "button small" %>
 <% end %>
+
+  </div>
+</div>

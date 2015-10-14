@@ -8,19 +8,19 @@
           <p><strong>Location</strong><br> <%= h.location %></p>
           <p><strong>Established</strong><br> <%= h.established %></p>
           <p><strong>Health</strong><br> <%= h.health %></p>
-          <%= render h.tags %><br>
+          <p><%= render h.tags %></p>
             <% @inspections.each do |i| %>
               <% if i.hive_id == h.id %>
                  Last inspection: <%= i.date %><br><br>
               <% end %>
             <% end %>
           <% if current_user %>
-            <%= link_to "Edit Hive", edit_hive_path(h), class: "button tiny" %>
+            <%= button_to "Edit Hive", edit_hive_path(h), class: "button small" %>
             <%= button_to "Delete",
                 hive_path(h),
                 data: { confirm: "Really?" },
                 method: :delete,
-                class: "button tiny" %>
+                class: "button small" %>
           <% end %>
         </div>
       </div>
