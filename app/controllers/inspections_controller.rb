@@ -1,6 +1,8 @@
 class InspectionsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @inspections = Inspection.all
+    @hives = Hive.all
   end
 
   def new
@@ -24,6 +26,31 @@ class InspectionsController < ApplicationController
 
   def show
     @inspection = Inspection.find(params[:id])
+  end
+
+  def edit
+    @inspection = Inspection.find(params[:id])
+    @hives = Hive.all
+  end
+
+  def update
+    @hives = Hive.all
+    @inspection = Inspection.find(params[:id])
+    @inspection.update(date: inspection_params[:date], time_of_day: inspection_params[:time_of_day], hive_id: inspection_params[:hive_id], tag_list: inspection_params[:tag_list])
+    if @inspection.save
+      flash[:notice] = 'Inspection updated'
+      redirect_to inspections_path
+    else
+      flash[:errors] = @inspection.errors.full_messages.join(". ")
+      render :edit
+    end
+  end
+
+  def destroy
+    @inspection = Inspection.find(params[:id])
+    @inspection.destroy
+    flash[:success] = 'Inspection deleted'
+    redirect_to inspections_path
   end
 
 private

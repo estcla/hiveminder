@@ -1,4 +1,6 @@
 class HivesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @hives = Hive.all
     @inspections = Inspection.all

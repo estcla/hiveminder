@@ -1,0 +1,9 @@
+<%= @user.email %>
+
+<% @hives.each do |h| %>
+  <%- if @user.id == h.user_id -%>
+    <%= h.name %>
+  <%- else -%>
+    <%= "N/A" %>
+  <% end %>
+<% end %>
