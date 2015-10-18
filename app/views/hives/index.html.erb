@@ -1,28 +1,37 @@
 <div class="row">
   <% @hives.each do |h| %>
-    <div class="medium-4 columns">
-      <div class="profile-card">
-        <%= link_to image_tag("hive.png"), hive_path(h) %>
-        <div class="profile-info">
-          <h4 class="subheader"><%= h.name %></h4>
-          <p><strong>Location</strong><br> <%= h.location %></p>
-          <p><strong>Established</strong><br> <%= h.established %></p>
-          <p><strong>Health</strong><br> <%= h.health %></p>
-            <% @inspections.each do |i| %>
-              <% if i.hive_id == h.id %>
-                 Last inspection: <%= i.date %><br><br>
-              <% end %>
-            <% end %>
-          <% if current_user %>
-            <%= link_to "Edit", edit_hive_path(h), class: "button small" %>
-            <%= button_to "Delete",
+  <div class="medium-4 columns">
+    <div class="profile-card">
+      <%= link_to image_tag("hive.png"), hive_path(h) %>
+      <div class="profile-info">
+        <h4 class="subheader">
+          <%= h.name %></h4>
+        <p>
+          <strong>Location</strong><br>
+          <%= h.location %></p>
+        <p>
+          <strong>Established</strong><br>
+          <%= h.established %></p>
+        <p>
+          <strong>Health</strong><br>
+          <%= h.health %></p>
+        <% @inspections.each do |i| %>
+          <% if i.hive_id == h.id %>
+              Last inspection: <%= i.date %><br>
+          <% end %>
+        <% end %>
+        <%- if h.user == current_user -%>
+        <ul class="button-group">
+          <li><%= link_to "Edit", edit_hive_path(h), class: "button small" %></li>
+          <li><%= link_to "Delete",
                 hive_path(h),
                 data: { confirm: "Really?" },
                 method: :delete,
-                class: "button small" %>
-          <% end %>
-        </div>
+                class: "button small" %></li>
+        </ul>
+        <%- end -%>
       </div>
     </div>
+  </div>
   <% end %>
 </div>

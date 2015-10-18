@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="medium-4 columns">
+      <div class="profile-card">
+        <div class="profile-info">
+          <h4 class="subheader">Inspection № <%= inspection.id %></h4>
+          <p><strong>Date</strong><br> <%= inspection.date %></p>
+          <p><strong>Time of Day</strong><br> <%= inspection.time_of_day %></p>
+          <p><strong>Hive</strong><br>
+                  <%= inspection.hive_id %>
+            </p></p>
+          <p><strong>Tags</strong></p>
+              <p>  <%= render inspection.tags %>
+              </p>
+          <%- if inspection.user == current_user -%>
+            <%= link_to "Edit", edit_inspection_path(inspection), class: "button small" %>
+            <%= button_to "Delete",
+                inspection_path(inspection),
+                data: { confirm: "Really?" },
+                method: :delete,
+                class: "button small" %>
+          <%- end -%>
+        </div>
+      </div>
+    </div>
+</div>

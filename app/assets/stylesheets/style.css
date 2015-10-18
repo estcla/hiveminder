@@ -15,7 +15,7 @@
   float: none;
   display: inline-block; }
 
-.menu .inline-list a {
+.menu a {
   color: #fff;
   padding-bottom: 0.25rem; }
 
@@ -101,7 +101,7 @@ body {
 .profile-card {
   padding: 1rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
-  margin: 2rem 0;
+  margin: 2em 0 2em 0;
   text-align: center;
   color: #6f6f6f;
   background-color: white; }
@@ -114,7 +114,8 @@ body {
   width: 8rem;
   display: block;
   margin: 1rem auto;
-  text-align: center; }
+  text-align: center;
+ }
 
 .profile-card .profile-info {
   padding: .25rem; }
@@ -134,3 +135,54 @@ body {
 .profile-card .profile-info .inline-list li {
   float: none;
   display: inline-block; }
+
+
+  /* Styles for signup panels */
+.auth-plain {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.left-solid {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.signup-panel {
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+
+.signup-panel a{
+  color: #fff;
+}
+
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+}
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+.signup-panel p {
+  font-size: 13px;
+  font-weight: 200;
+  text-align: center;
+}
+.signup-panel .button {
+  margin-left: 35%;
+}
+
+.newusers {
+  background: #fff;
+}

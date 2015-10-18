@@ -5,10 +5,11 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <%= javascript_include_tag "vendor/modernizr" %>
 </head>
 <body>
 <nav class="menu">
-  <h1 class="name"><i class="fi-clipboard-pencil"></i>hiveminder</a></h1>
+  <h1 class="name"><a href="/"><i class="fi-clipboard-pencil"></i>hiveminder</a></h1>
   <ul class="inline-list">
   <%- if current_user -%>
     <li><%= link_to "View Tags", tags_path %></li>
@@ -27,7 +28,7 @@
 </nav>
 
 <div class="row">
-    <div class="small-9 small-centered columns">
+    <div class="large-8 large-centered columns">
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -41,7 +42,7 @@
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
-</div></div>
+</div>
 </div>
 </body>
 </html>
