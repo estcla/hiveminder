@@ -1,9 +1,11 @@
-<%= @user.email %>
-
-<% @hives.each do |h| %>
-  <%- if @user.id == h.user_id -%>
-    <%= h.name %>
-  <%- else -%>
-    <%= "N/A" %>
-  <% end %>
-<% end %>
+<div class="row">
+<div class="medium-3 columns">
+<%= image_tag @user.profile_photo %>
+<h1><%= @user.name %></h1>
+<%= @user.location %>
+</div>
+<div class="medium-9 columns">
+  <%= render @user.inspections %>
+<%= render @user.hives %>
+</div>
+</div>

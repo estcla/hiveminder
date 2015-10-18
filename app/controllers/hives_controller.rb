@@ -1,6 +1,6 @@
 class HivesController < ApplicationController
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @hives = Hive.all
     @inspections = Inspection.all
@@ -11,7 +11,7 @@ class HivesController < ApplicationController
   end
 
   def create
-    @hive = Hive.new(hive_params)
+        @hive = Hive.new(hive_params)
     @hive.user = current_user
 
     if @hive.save

@@ -7,16 +7,16 @@
           <p><strong>Date</strong><br> <%= i.date %></p>
           <p><strong>Time of Day</strong><br> <%= i.time_of_day %></p>
           <p><strong>Hive</strong><br>
-                      <% @hives.each do |h| %>
+                    <% @hives.each do |h| %>
                       <% if h.id == i.hive_id %>
                           <%= h.name %>
-                                <% end %>
-                                  <% end %>
+                      <% end %>
+                    <% end %>
             </p></p>
           <p><strong>Tags</strong></p>
               <p>  <%= render i.tags %>
               </p>
-          <%- if current_user -%>
+          <%- if i.user == current_user -%>
             <%= link_to "Edit", edit_inspection_path(i), class: "button small" %>
             <%= button_to "Delete",
                 inspection_path(i),
