@@ -15,7 +15,7 @@ feature 'user edits profile', %Q{
     fill_in 'Password', with: user.password
 
     click_button 'Log in'
-    click_link "Edit Profile"
+    visit edit_user_registration_path
 
 
     fill_in 'Email', with: user.email
@@ -25,7 +25,7 @@ feature 'user edits profile', %Q{
     fill_in 'Name', with: 'Dave'
 
     click_button "Update"
-    click_link "View Profile"
+    visit user_path(user.id)
 
     expect(page).to have_content('Dave')
   end
