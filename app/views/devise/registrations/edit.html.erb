@@ -4,56 +4,58 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :experience %><br />
+    <%= f.label :experience %>
     <%= f.text_field :experience %>
-  </div>
+  </div><br>
+
+    <div class="field">
+      <%= f.label :about %>
+      <%= f.text_field :about %>
+    </div><br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>Leave blank if you don't want to change it.</i>
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  </div><br>
+
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div><br>
 
     <div class="field">
     <%= f.label :profile_photo %>
     <%= f.file_field :profile_photo %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>Needed to update profile.</i>
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "button" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<p><%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %></p>

@@ -8,4 +8,5 @@ class Hive < ActiveRecord::Base
   validates :location, presence: true
   validates :established, presence: true
   validates :health, presence: true
+
 end

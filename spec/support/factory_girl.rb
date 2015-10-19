@@ -1,4 +1,5 @@
 require 'factory_girl'
+require 'faker'
 
 FactoryGirl.define do
   factory :user do
@@ -12,6 +13,10 @@ FactoryGirl.define do
     location "Backyard"
     established "Two seconds ago"
     health "Good"
-    user_id 1
+  end
+
+  factory :inspection do
+    date "Yesterday"
+    time_of_day { Faker::Name.name }
   end
 end

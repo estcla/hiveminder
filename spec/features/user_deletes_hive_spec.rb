@@ -7,6 +7,7 @@ feature 'user deletes a hive', %{
 } do
   scenario 'user successfully deletes a hive' do
     user = FactoryGirl.create(:user)
+    hive = FactoryGirl.create(:hive, user: user)
 
     visit new_user_session_path
 
@@ -14,15 +15,6 @@ feature 'user deletes a hive', %{
     fill_in 'Password', with: user.password
 
     click_button 'Log in'
-
-    visit new_hive_path
-
-    fill_in "hive[name]", with: "Hivey Hive"
-    fill_in "hive[location]", with: "Backyard"
-    fill_in "hive[established]", with: "Spring 2015"
-    fill_in "hive[health]", with: "Fair"
-
-    click_button 'Submit'
 
     visit hives_path
 
