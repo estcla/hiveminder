@@ -2,8 +2,9 @@ class HivesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @hives = Hive.all
+    @hives = Hive.all.order("created_at ASC")
     @inspections = Inspection.all
+    @int = 0
   end
 
   def new

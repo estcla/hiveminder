@@ -1,46 +1,69 @@
+body {
+  background: -moz-linear-gradient(top, rgba(215,198,174,0.25) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(215,198,174,0.25), color-stop(100%), rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: -ms-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  height: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .row {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto;
 
-.menu {
+}
+
+.top-bar {
   background-color: rgb(140,198,174);
   text-shadow: 0 0 10px rgb(93, 140, 121);
-  padding: 1.5rem 2.5rem;
-  height: auto;
-  margin-bottom: 2rem; }
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: auto; }
 
-.menu .inline-list {
-  text-align: center; }
+.top-bar .inline-list {
+  text-align: center;
+  width: 100%;
+  height: auto; }
 
-.menu .inline-list li {
-  float: none;
-  display: inline-block; }
+.top-bar .top-bar-section ul li a {
+  font-size: .95rem;
+}
+.top-bar li {
+  display: inline;
+  padding: 0;
+ }
 
-.menu a {
+.top-bar a {
   color: #fff;
-  padding-bottom: 0.25rem; }
+ }
 
-.menu .inline-list a:hover {
+.top-bar a:hover {
   color: rgba(255, 255, 255, 0.5);
   text-shadow: 0 0 10px rgba(93, 140, 121, 0.5);
   transition: all .3s ease-in-out; }
 
-.menu .inline-list .active a {
+.top-bar .active a {
   color: rgba(255, 255, 255, 0.5);
   text-shadow: 0 0 10px rgba(93, 140, 121, 0.5); }
 
 @media only screen and (min-width: 60em) {
-  .menu {
-    height: 4.5rem; }
-
-  .menu .inline-list {
-    float: right; }
+  .top-bar {
+    height: auto;
+  text-align: center;}
 }
 
-.name {
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #555555;
+}
+.top-bar .name h1 {
   text-align: center;
   font-size: 1.75rem;
-  line-height: 1;
-  margin: 0 0 .75rem 0;
   color: #fff;
  }
 
@@ -51,7 +74,7 @@
 
 @media only screen and (min-width: 60em) {
   .name {
-    float: left; }
+    text-align: center;}
 }
 
 .simple_form {
@@ -83,28 +106,15 @@
   text-align: center;
 }
 
-body {
-  background-color: white;
-  background: -moz-linear-gradient(top, rgba(215,198,174,0.25) 0%, rgba(0,0,0,0) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(215,198,174,0.25), color-stop(100%), rgba(0,0,0,0)));
-  background: -webkit-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
-  background: -o-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
-  background: -ms-linear-gradient(top, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
-  background: linear-gradient(to bottom, rgba(215,198,174,0.25), 0%,rgba(0,0,0,0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
-  height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .profile-card {
   padding: 1rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   margin: 2em 0 2em 0;
   text-align: center;
   color: #6f6f6f;
-  background-color: white; }
+  background-color: white;
+
+}
 
 .profile-card a {
   color: #7e7e7e;
@@ -133,56 +143,61 @@ body {
   margin-bottom: 1rem; }
 
 .profile-card .profile-info .inline-list li {
-  float: none;
+
   display: inline-block; }
 
+.has-form {
+  top: 0;
+  left: 3rem;
+  min-width: 14rem; }
+  @media only screen and (max-width: 40em) {
+    .has-form {
+      min-width: 10rem;
+      top: 0.5rem; }
+      .has-form .button {
+        height: 1.85rem; } }
 
-  /* Styles for signup panels */
-.auth-plain {
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-top: 0px;
-}
-
-.left-solid {
-margin-top: 0px;
-margin-bottom: 0px;
-}
-
-.signup-panel {
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background: #fff;
+.tinyhive {
+    width: 50%;
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
 }
 
-.signup-panel a{
-  color: #fff;
+.profile {
+    width: 100%;
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
 }
 
-.signup-panel i {
-  font-size: 30px;
-  line-height: 50px;
-  color: #999;
-}
-.signup-panel form input, .signup-panel form span {
-  height: 50px;
-}
-.signup-panel .welcome {
-  font-size: 26px;
+.sticky {
+  position: relative;
+  top: 0;
+  background: none;
   text-align: center;
-  margin-left: 0;
-}
-.signup-panel p {
-  font-size: 13px;
-  font-weight: 200;
+  border: none;}
+
+.footer {
+  background-color: rgb(140,198,174);
+  text-shadow: 0 0 10px rgb(93, 140, 121);
+  height: 100px;
   text-align: center;
-}
-.signup-panel .button {
-  margin-left: 35%;
+  font-size: 1.2rem;
+  padding: 4rem;
+  color: white;
+
+   width:100%;
 }
 
-.newusers {
-  background: #fff;
+.footer p.sitename {
+  font-size: 1.8rem;
+  margin: 0 0 1rem;
+}
+
+.footer .links a {
+  color: white;
+  list-style: none;
+  padding: 3rem 0 2rem;
+  margin: 0;
 }

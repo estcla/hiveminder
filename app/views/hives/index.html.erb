@@ -1,7 +1,8 @@
-<div class="row">
+    <div class="medium-12 columns" data-equalizer>
+      <ul class='medium-block-grid-3'>
   <% @hives.each do |h| %>
-  <div class="medium-4 columns">
-    <div class="profile-card">
+          <li class="<%= @int += 1 %>">
+      <div class="profile-card" data-equalizer-watch>
       <%= link_to image_tag("hive.png"), hive_path(h) %>
       <div class="profile-info">
         <h4 class="subheader">
@@ -32,6 +33,7 @@
         <%- end -%>
       </div>
     </div>
-  </div>
-  <% end %>
+    </li>
+        <% end %>
+        </ul>
 </div>

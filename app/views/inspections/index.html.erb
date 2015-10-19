@@ -1,7 +1,9 @@
-<div class="row">
-  <% @inspections.each do |i| %>
-    <div class="medium-4 columns">
-      <div class="profile-card">
+  <div class="medium-12 columns" data-equalizer>
+      <ul class='medium-block-grid-3'>
+        <% @inspections.each do |i| %>
+          <li class="<%= @int += 1 %>">
+      <div class="profile-card" data-equalizer-watch>
+          <%= link_to image_tag("inspect.png"), class: "tinyhive" %>
         <div class="profile-info">
           <h4 class="subheader">Inspection № <%= i.id %></h4>
           <p><strong>Date</strong><br> <%= i.date %></p>
@@ -13,19 +15,19 @@
                       <% end %>
                     <% end %>
             </p></p>
-          <p><strong>Tags</strong></p>
+        <strong>Tags</strong><br>
               <p>  <%= render i.tags %>
               </p>
-          <%- if i.user == current_user -%>
-            <%= link_to "Edit", edit_inspection_path(i), class: "button small" %>
-            <%= button_to "Delete",
-                inspection_path(i),
-                data: { confirm: "Really?" },
-                method: :delete,
-                class: "button small" %>
-          <%- end -%>
+            <ul class="button-group">
+              <li><%= link_to "Edit", edit_inspection_path(i), class: "button small" %></li>
+              <li><%= link_to "Delete",
+                  inspection_path(i),
+                  data: { confirm: "Really?" },
+                  method: :delete,
+                  class: "button small" %></li></ul>
         </div>
       </div>
+    </li>
+        <% end %>
+        </ul>
     </div>
-  <% end %>
-</div>

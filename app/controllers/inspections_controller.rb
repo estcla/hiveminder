@@ -1,8 +1,13 @@
 class InspectionsController < ApplicationController
   before_action :authenticate_user!
+
   def index
-    @inspections = Inspection.all
+    @inspections = Inspection.all.order("created_at ASC")
     @hives = Hive.all
+    if params[:search]
+      @inspections = Inspection.search(params[:search]).order("created_at DESC")
+    end
+    @int = 0
   end
 
   def new
@@ -53,10 +58,14 @@ class InspectionsController < ApplicationController
     redirect_to inspections_path
   end
 
+  def results
+  @inspections = Inspection.where("title LIKE ?", "%#{params[:q]}%") \
+    | Product.tagged_with("%#{params[:q]}%")
+end
+
 private
 
   def inspection_params
     params.require(:inspection).permit(:date, :time_of_day, :user_id, :hive_id, :tag_list)
   end
-
 end
